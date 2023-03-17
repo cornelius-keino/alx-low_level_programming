@@ -14,8 +14,11 @@ char x;
 
 for (ch = 'a'; ch <= 'z'; ch++)
 {
-x = toupper(ch);
 putchar (ch);
+}
+for (ch = 'a'; ch <= 'z'; ch++)
+{
+x = toupper(ch);
 putchar (x);
 }
 putchar ('\n');
