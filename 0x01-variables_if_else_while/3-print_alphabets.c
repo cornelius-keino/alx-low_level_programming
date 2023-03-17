@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Entry point
  *
@@ -8,8 +9,8 @@
  */
 int main(void)
 {
-int ch;
-int x;
+char ch;
+char x;
 
 for (ch = 'a'; ch <= 'z'; ch++)
 {
@@ -17,6 +18,6 @@ x = toupper(ch);
 putchar (ch);
 putchar (x);
 }
-putchar ("\n")
+putchar ('\n');
 return (0);
 }
