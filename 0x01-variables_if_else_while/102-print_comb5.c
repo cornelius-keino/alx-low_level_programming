@@ -13,9 +13,9 @@ int number2;
 
 for (number1 = 0; number1 < 99; number1++)
 {
-for (nunber2 = number1 + 1; number2 < 100; number2++)
+for (number2 = number1 + 1; number2 < 100; number2++)
 {
-putchar((numner1 / 10) + '0');
+putchar((number1 / 10) + '0');
 putchar((number1 % 10) + '0');
 putchar(' ');
 putchar((number2 / 10) + '0');
