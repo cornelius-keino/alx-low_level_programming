@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  * print_to_98 - print number ending with 98
@@ -19,7 +20,7 @@ void print_to_98(int n)
 			}
 			else
 			{
-				printf("%d, ", n)
+				printf("%d, ", n);
 			}
 		}
 	}
