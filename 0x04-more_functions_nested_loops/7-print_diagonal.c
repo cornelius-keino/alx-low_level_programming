@@ -17,7 +17,7 @@ int a;
 
 for (a = 1; a < n; a++)
 {
-_putchar('\\');
+_putchar('\');
 }
 }
 _putchar('\n);
