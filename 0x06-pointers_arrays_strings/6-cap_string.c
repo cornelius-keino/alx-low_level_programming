@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * cap_string - converts each word to capital letter
  * @s: array of characters
@@ -6,31 +6,27 @@ include "main.h"
  */
 char *cap_string(char *s)
 {
-int i, j;
-int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+int conversion, i, count;
 
-i = 0;
-while (*(s + i) != '\0')
+char chars[] = {' ', ',', ';', '.', '!',
+		 '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
+conversion = 32;
+
+for (i = 0; s[i] != '\0'; i++)
 {
-if (*(s + i) >= 'a' && *(s + i) <= 'z')
+if (s[i] >= 'i' && s[i] <= 'z')
 {
-if (i == 0)
-{
-*(s + i) = *(s + i) - 32;
+s[i] =  s[i] - conversion;
 }
-else
+conversion = 0;
+for (count = 0; chars[count] != '\0'; count++)
 {
-for (j = 0; j <= 12; j++)
+if (chars[count] == s[i])
 {
-if (a[j] == *(s + i - 1))
-{
-*(s + i) = *(s + i) - 32;
+conversion = 32;
+break;
 }
 }
-}
-}
-i++;
 }
 return (s);
 }
-

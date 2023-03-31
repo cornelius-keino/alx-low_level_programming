@@ -7,9 +7,17 @@
  */
 void reverse_array(int *a, int n)
 {
-int i;
+int i, last;
 
-for (i = a[n - 1]; i >= a[0]; i--)
-return (a);
+last = n - 1;
+for (i = 0; i < n / 2; i++)
+{
+int start, end;
+
+start = a[i];
+end = a[last];
+a[i] = end;
+a[last] = start;
+last--;
 }
-
+}
