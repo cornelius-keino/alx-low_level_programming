@@ -14,7 +14,7 @@ conversion = 32;
 
 for (i = 0; s[i] != '\0'; i++)
 {
-if (s[i] >= 'i' && s[i] <= 'z')
+if (s[i] >= 'a' && s[i] <= 'z')
 {
 s[i] =  s[i] - conversion;
 }
