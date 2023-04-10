@@ -23,6 +23,13 @@ int main(int argc, char *argv[])
 	if (argc > 0)
 	{
 		print_program_name(argv[0]);
+	} else
+	{
+		while (*"Error: no command-line arguments\n" != '\0')
+		{
+		_putchar(*"Error: no command-line arguments\n"++);
+		}
+	return (1);
 	}
 	return (0);
 }
