@@ -1,31 +1,19 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * print_args - print arguments
- *@argc: number of command line arguments passed
- *@argv: array of string containing command line  arguments
- *
- */
-void print_args(int argc, char *argv[])
-{
-for (int i = 0; i < argc; i++)
-{
-char *arg = argv[i];
-while (*arg != '\0')
-{
-_putchar(*arg);
-arg++;
-}
-_putchar('\n');
-}
-}
-/**
- * main - entry point of the program
- *@argc: number of command line arguments passed
- *@argv: array of string containing command line  arguments
- *Return: 0 on success
+ * main - prints all the arguments it receives
+ * @argv: array of pointers to strings
+ * @argc: argument count
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
-print_args(argc, argv);
-return (0);
+	int i = 0;
+
+	while (i < argc)
+	{
+		printf("%s\n", argv[i]);
+		i++;
+	}
+	return (0);
 }

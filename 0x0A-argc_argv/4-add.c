@@ -1,94 +1,32 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * string_to_int - convert string to integers
- *@str: number
- *Return: result
- */
-int string_to_int(char *str)
-{
-int result = 0;
-
-for (int i = 0; str[i] != '\0'; i++)
-{
-if (str[i] >= '0' && str[i] <= '9')
-{
-result = result * 10 + (str[i] - '0');
-}
-else
-{
-return (-1);
-}
-}
-return (result);
-}
-/**
- * print_int - print integers
- *@num: number
+ * main - adds positive numbers
+ * @argv: array of pointers to strings
+ * @argc: argument count
  *
- */
-void print_int(int num)
-{
-if (num == 0)
-{
-_putchar('0');
-return;
-}
-if (num < 0)
-{
-_putchar('-');
-num = -num;
-}
-int digits[10];
-int i = 0;
-while (num > 0)
-{
-digits[i++] = num % 10;
-num /= 10;
-}
-while (i > 0)
-{
-_putchar(digits[--i] + '0');
-}
-}
-
-/**
- * add_positive_numbers - print addition of positive numbers
- *@argc: number of command line arguments passed
- *@argv: array of string containing command line  arguments
- *Return: result
- */
-int add_positive_numbers(int argc, char *argv[])
-{
-int sum = 0;
-for (int i = 1; i < argc; i++)
-{
-int num = string_to_int(argv[i]);
-if (num <= 0)
-{
-continue;
-}
-sum += num;
-}
-return (sum);
-}
-
-/**
- * main - entry point of the program
- *@argc: number of command line arguments passed
- *@argv: array of string containing command line  arguments
- *Return: 0 on success
+ * Return: 0 or 1
  */
 int main(int argc, char *argv[])
 {
-int sum = add_positive_numbers(argc, argv);
-if (sum == 0)
-{
-_putchar('0');
-}
-else
-{
-print_int(sum);
-}
-_putchar('\n');
-return (0);
+	int i, j, z;
+	int sum = 0;
+
+	for (j = 1; j < argc; j++)
+	{
+		for (z = 0; argv[j][z] != '\0'; z++)
+		{
+			if (argv[j][z] < '0'
+			    || argv[j][z] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+	}
+	for (i = 1; i < argc; i++)
+		sum += atoi(argv[i]);
+	printf("%d\n", sum);
+	return (0);
 }
