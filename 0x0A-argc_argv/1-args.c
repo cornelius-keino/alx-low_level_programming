@@ -7,7 +7,7 @@ void print_arg_number(int argc)
 {
 	int number = argc - 1;
 
-	while (number >= 0)
+	while (number > 0)
 	{
 		_putchar((number % 10) + '0');
 		number = number / 10;
