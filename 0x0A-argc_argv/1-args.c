@@ -5,19 +5,14 @@
  */
 void print_arg_number(int argc)
 {
-	int digit1, digit2, number = argc - 1;
+	int number = argc - 1;
 
 	while (number > 0)
 	{
-		if (number > 9)
-		{
-			digit1 = number / 10;
-			digit2 = number % 10;
-			_putchar(digit1 + '0');
-			_putchar(digit2 + '0');
-		}
-		_putchar(number + '0');
+		_putchar((number % 10) + '0');
+		number = number / 10;
 	}
+	_putchar('\n');
 
 }
 /**
