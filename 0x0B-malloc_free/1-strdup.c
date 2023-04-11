@@ -9,17 +9,16 @@
   */
 char *_strdup(char *str)
 {
-if (str == NULL) /* handle NULL input */
-{
-return (NULL);
-}
-size_t len = strlen(str) + 1; /* compute string length */
-char *copy = malloc(len); /* allocate memory */
-if (copy == NULL) /* handle allocation failure */
-{
-return (NULL);
-}
-memcpy(copy, str, len); /* copy string */
-return (copy); /* return pointer to copy */
-}
+char *dup;
+size_t len;
 
+len = strlen(str) + 1; /* compute string length */
+dup = malloc(sizeof(char) * len);
+
+if (dup == NULL)
+return (NULL);
+
+memcpy(dup, str, len);
+
+return (dup);
+}

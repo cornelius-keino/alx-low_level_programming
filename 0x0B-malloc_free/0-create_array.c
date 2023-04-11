@@ -8,28 +8,16 @@
   */
 char *create_array(unsigned int size, char c)
 {
-/* Return NULL if size is 0 */
-if (size == 0)
-{
-return (NULL);
-}
+char *array;
+unsigned int i;
 
-/* Allocate memory for the array */
-char *array = (char *) malloc(size * sizeof(char));
+array = (char *) malloc(size * sizeof(char));
 
-/* Check if memory allocation was successful */
 if (array == NULL)
-{
 return (NULL);
-}
 
-/* Initialize each element of the array with the given char */
-for (int i = 0; i < size; i++)
-{
+for (i = 0; i < size; i++)
 array[i] = c;
-}
 
-/* Return a pointer to the array */
 return (array);
 }
-
