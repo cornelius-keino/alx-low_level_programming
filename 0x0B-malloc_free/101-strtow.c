@@ -10,16 +10,19 @@
  */
 char **strtow(char *str)
 {
+	char **words = NULL;
+	int word_count = 0;
+	int word_index = 0;
+	int word_length = 0;
+	int i, j;
+
 	if (str == NULL || strcmp(str, "") == 0)
 	{
 		return (NULL);
 	}
 
-	int word_count = 0;
-	char **words = NULL;
-
 	/* Count the number of words in the string */
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 		{
@@ -45,10 +48,7 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	int word_index = 0;
-	int word_length = 0;
-
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 		{
@@ -80,7 +80,7 @@ char **strtow(char *str)
 		words[word_index] = malloc((word_length + 1) * sizeof(char));
 		if (words[word_index] == NULL)
 		{
-			for (int j = 0; j < word_index; j++)
+			for (j = 0; j < word_index; j++)
 			{
 				free(words[j]);
 			}
