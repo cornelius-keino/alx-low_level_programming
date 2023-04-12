@@ -57,7 +57,7 @@ char **strtow(char *str)
 				words[word_index] = malloc((word_length + 1) * sizeof(char));
 				if (words[word_index] == NULL)
 				{
-					for (int j = 0; j < word_index; j++)
+					for (j = 0; j < word_index; j++)
 					{
 						free(words[j]);
 					}
