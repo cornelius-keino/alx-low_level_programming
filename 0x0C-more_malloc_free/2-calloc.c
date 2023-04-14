@@ -10,25 +10,24 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
-	int i = 0;
-	unsigned int total_size = 0;
+	int i = 0, l = 0;
+	char *p;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	total_size = nmemb * size;
-	ptr = malloc(total_size);
+	l = nmemb * size;
+	p = malloc(l);
 
-	if (ptr == NULL)
+	if (p == NULL)
 		return (NULL);
 
-	/* set memory to zero */
-	while (i < total_size)
+	while (i < l)
 	{
-		ptr[i] = 0;
+		p[i] = 0;
 		i++;
 	}
-	return (ptr);
+
+	return (p);
 }
 
