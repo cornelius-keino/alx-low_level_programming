@@ -88,7 +88,7 @@ void print_error(void)
 
 	for (int i = 0; i < len; i++)
 	{
-		putchar(msg[i]);
+		_putchar(msg[i]);
 	}
 }
 
@@ -135,8 +135,8 @@ int main(int argc, char *argv[])
 
 	if (result == 0)
 	{
-		putchar('0');
-		putchar('\n');
+		_putchar('0');
+		_putchar('\n');
 		return (0);
 	}
 }
